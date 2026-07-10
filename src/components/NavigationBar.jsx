@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const NavigationBar = () => {
     return (
@@ -6,9 +7,9 @@ const NavigationBar = () => {
 
             <nav className="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm py-3">
                 <div className="container">
-                    <a className="navbar-brand fw-bold text-uppercase tracking-wider" href="#">
+                    <Link className="navbar-brand fw-bold text-uppercase tracking-wider" href="/">
                         <i className="bi bi-car-front-fill me-2"></i>Aster MIMS
-                    </a>
+                    </Link>
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>
                     </button>

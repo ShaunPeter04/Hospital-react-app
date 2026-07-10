@@ -8,6 +8,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import RegisterPatient from './components/RegisterPatient'
 import ViewPatients from './components/ViewPatients'
 import SearchPatients from './components/SearchPatients'
+import DischargePatients from './components/DischargePatients'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -20,6 +21,7 @@ function App() {
 
           <Route path='/' element={<RegisterPatient />} />
           <Route path='/search' element={<SearchPatients />} />
+          <Route path='/discharge' element={<DischargePatients />} />
           <Route path='/view' element={<ViewPatients />} />
         </Routes>
 
