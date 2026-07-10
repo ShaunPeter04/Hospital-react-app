@@ -6,6 +6,7 @@ import './App.css'
 import NavigationBar from './components/NavigationBar'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import RegisterPatient from './components/RegisterPatient'
+import ViewPatients from './components/ViewPatients'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -17,6 +18,7 @@ function App() {
         <Routes>
 
           <Route path='/' element={<RegisterPatient />} />
+          <Route path='/view' element={<ViewPatients />} />
         </Routes>
 
       </BrowserRouter>
