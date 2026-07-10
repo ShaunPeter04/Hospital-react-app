@@ -1,133 +1,27 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import NavigationBar from './NavigationBar'
+import axios from 'axios'
 
 const ViewPatients = () => {
 
-    const [data, changeData] = useState(
+    const [data, changeData] = useState([])
 
-        [
-            {
-                "patientId": "PT101",
-                "name": "Arun Kumar",
-                "age": 34,
-                "gender": "Male",
-                "bloodGroup": "O+",
-                "doctor": "Dr. Meera Nair",
-                "disease": "Viral Fever",
-                "roomNo": "A101",
-                "admissionDate": "2026-07-01",
-                "mobile": "9876543210"
-            },
-            {
-                "patientId": "PT102",
-                "name": "Anjali Nair",
-                "age": 28,
-                "gender": "Female",
-                "bloodGroup": "A+",
-                "doctor": "Dr. Joseph Thomas",
-                "disease": "Migraine",
-                "roomNo": "A102",
-                "admissionDate": "2026-07-02",
-                "mobile": "9876543211"
-            },
-            {
-                "patientId": "PT103",
-                "name": "Rahul Das",
-                "age": 45,
-                "gender": "Male",
-                "bloodGroup": "B+",
-                "doctor": "Dr. Suresh Kumar",
-                "disease": "Diabetes",
-                "roomNo": "B201",
-                "admissionDate": "2026-07-03",
-                "mobile": "9876543212"
-            },
-            {
-                "patientId": "PT104",
-                "name": "Sneha Roy",
-                "age": 31,
-                "gender": "Female",
-                "bloodGroup": "AB+",
-                "doctor": "Dr. Meera Nair",
-                "disease": "Asthma",
-                "roomNo": "B202",
-                "admissionDate": "2026-07-03",
-                "mobile": "9876543213"
-            },
-            {
-                "patientId": "PT105",
-                "name": "Vishnu Prasad",
-                "age": 53,
-                "gender": "Male",
-                "bloodGroup": "O-",
-                "doctor": "Dr. Anand Krishnan",
-                "disease": "Hypertension",
-                "roomNo": "C301",
-                "admissionDate": "2026-07-04",
-                "mobile": "9876543214"
-            },
-            {
-                "patientId": "PT106",
-                "name": "Keerthana S",
-                "age": 24,
-                "gender": "Female",
-                "bloodGroup": "A-",
-                "doctor": "Dr. Joseph Thomas",
-                "disease": "Food Poisoning",
-                "roomNo": "C302",
-                "admissionDate": "2026-07-05",
-                "mobile": "9876543215"
-            },
-            {
-                "patientId": "PT107",
-                "name": "Nikhil Menon",
-                "age": 39,
-                "gender": "Male",
-                "bloodGroup": "B-",
-                "doctor": "Dr. Anand Krishnan",
-                "disease": "Fracture",
-                "roomNo": "D401",
-                "admissionDate": "2026-07-06",
-                "mobile": "9876543216"
-            },
-            {
-                "patientId": "PT108",
-                "name": "Priya Thomas",
-                "age": 47,
-                "gender": "Female",
-                "bloodGroup": "O+",
-                "doctor": "Dr. Suresh Kumar",
-                "disease": "Pneumonia",
-                "roomNo": "D402",
-                "admissionDate": "2026-07-06",
-                "mobile": "9876543217"
-            },
-            {
-                "patientId": "PT109",
-                "name": "Akhil Raj",
-                "age": 36,
-                "gender": "Male",
-                "bloodGroup": "AB-",
-                "doctor": "Dr. Meera Nair",
-                "disease": "Kidney Stone",
-                "roomNo": "E501",
-                "admissionDate": "2026-07-07",
-                "mobile": "9876543218"
-            },
-            {
-                "patientId": "PT110",
-                "name": "Divya Mohan",
-                "age": 29,
-                "gender": "Female",
-                "bloodGroup": "A+",
-                "doctor": "Dr. Joseph Thomas",
-                "disease": "Typhoid",
-                "roomNo": "E502",
-                "admissionDate": "2026-07-08",
-                "mobile": "9876543219"
+    const fetchData = () => {
+
+        axios.get("https://raw.githubusercontent.com/anishpdm/demo-json-api/refs/heads/main/hospital-data.json").then(
+
+            (response) => {
+
+                changeData(response.data)
             }
-        ]
+        ).catch()
+    }
 
+    useEffect(
+
+        () => {
+            fetchData()
+        }
     )
 
 
